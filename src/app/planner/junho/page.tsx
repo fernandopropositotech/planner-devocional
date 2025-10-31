@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function junhoPage() {
+export default function JunhoPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/junho/${dia}`);
+    router.push(`/planner/Junho/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function junhoPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 junho — Devocional
+          🌿 Junho — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function maioPage() {
+export default function MaioPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/maio/${dia}`);
+    router.push(`/planner/Maio/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function maioPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 maio — Devocional
+          🌿 Maio — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

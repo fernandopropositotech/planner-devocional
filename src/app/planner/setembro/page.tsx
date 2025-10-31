@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function setembroPage() {
+export default function SetembroPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/setembro/${dia}`);
+    router.push(`/planner/Setembro/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function setembroPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 setembro — Devocional
+          🌿 Setembro — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

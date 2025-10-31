@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function marcoPage() {
+export default function MarcoPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/marco/${dia}`);
+    router.push(`/planner/Marco/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function marcoPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 marco — Devocional
+          🌿 Marco — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

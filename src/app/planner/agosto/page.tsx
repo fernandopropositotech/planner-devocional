@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function agostoPage() {
+export default function AgostoPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/agosto/${dia}`);
+    router.push(`/planner/Agosto/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function agostoPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 agosto — Devocional
+          🌿 Agosto — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

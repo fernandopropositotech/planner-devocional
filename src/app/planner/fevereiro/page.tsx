@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function fevereiroPage() {
+export default function FevereiroPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/fevereiro/${dia}`);
+    router.push(`/planner/Fevereiro/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function fevereiroPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 fevereiro — Devocional
+          🌿 Fevereiro — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

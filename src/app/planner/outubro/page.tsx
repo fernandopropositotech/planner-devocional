@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function outubroPage() {
+export default function OutubroPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/outubro/${dia}`);
+    router.push(`/planner/Outubro/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function outubroPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 outubro — Devocional
+          🌿 Outubro — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual

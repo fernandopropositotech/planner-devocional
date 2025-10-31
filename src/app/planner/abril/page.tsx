@@ -1,11 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function abrilPage() {
+export default function AbrilPage() {
   const router = useRouter();
 
   const irParaDia = (dia: number) => {
-    router.push(`/planner/abril/${dia}`);
+    router.push(`/planner/Abril/${dia}`);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function abrilPage() {
             marginBottom: "0.5rem",
           }}
         >
-          🌿 abril — Devocional
+          🌿 Abril — Devocional
         </h1>
         <p style={{ color: "#2e7d32" }}>
           Escolha o dia para escrever sua jornada espiritual
