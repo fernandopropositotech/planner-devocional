@@ -1,9 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { use } from "react"; // ✅ necessário para lidar com params como Promise
 
-export default function DiaDevocional({ params }: { params: Promise<{ dia: string }> }) {
-  const { dia } = use(params); // ✅ desembrulhando a Promise
+export default function DiaDevocional({ params }: { params: { dia: string } }) {
+  const { dia } = params; // ✅ direto, sem use()
   const router = useRouter();
 
   const irPara = (novoDia: number) => {
@@ -19,7 +18,6 @@ export default function DiaDevocional({ params }: { params: Promise<{ dia: strin
         minHeight: "100vh",
       }}
     >
-      {/* Cabeçalho */}
       <header style={{ textAlign: "center", marginBottom: "2rem" }}>
         <h1 style={{ fontSize: "1.8rem", color: "#2e7d32" }}>
           Dia {dia} — Devocional
@@ -27,7 +25,6 @@ export default function DiaDevocional({ params }: { params: Promise<{ dia: strin
         <p style={{ color: "#555" }}>Tempo com Deus 🌿</p>
       </header>
 
-      {/* Seções */}
       <div
         style={{
           display: "grid",
@@ -74,7 +71,6 @@ export default function DiaDevocional({ params }: { params: Promise<{ dia: strin
         ))}
       </div>
 
-      {/* Navegação */}
       <div
         style={{
           display: "flex",
@@ -111,7 +107,7 @@ export default function DiaDevocional({ params }: { params: Promise<{ dia: strin
             fontWeight: "bold",
           }}
         >
-          Próximo Dia → 
+          Próximo Dia →
         </button>
       </div>
     </div>
