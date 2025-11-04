@@ -1,21 +1,28 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import DayCard from "../../../components/DayCard";
-import Folhagem from "../../components/Folhagem";
-import styles from "./Planner.module.css";
 
+import React, { useState, useEffect } from "react";
+import DayCard from "./components/DayCard";
+import Folhagem from "./components/Folhagem";
+import styles from "./Planner.module.css";  
+
+// Dias da semana
 const dias = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
 
-const Planner = () => {
-  const [tasks, setTasks] = useState<{ [key: string]: string[] }>({});
+// Tipagem para tarefas (cada dia pode ter uma lista de strings)
+type TasksByDay = Record<string, string[]>;
 
-  // Carregar do LocalStorage
+const Planner = () => {
+  const [tasks, setTasks] = useState<TasksByDay>({});
+
+  // Carregar dados salvos no LocalStorage (apenas no cliente)
   useEffect(() => {
     const saved = localStorage.getItem("plannerData");
-    if (saved) setTasks(JSON.parse(saved));
+    if (saved) {
+      setTasks(JSON.parse(saved));
+    }
   }, []);
 
-  // Salvar no LocalStorage
+  // Salvar sempre que houver mudanças nas tarefas
   useEffect(() => {
     localStorage.setItem("plannerData", JSON.stringify(tasks));
   }, [tasks]);
@@ -30,7 +37,7 @@ const Planner = () => {
       <h1 className={styles.title}>Planner Semanal</h1>
 
       <div className={styles.grid}>
-        {dias.map(dia => (
+        {dias.map((dia) => (
           <DayCard key={dia} day={dia} tasks={tasks[dia]} />
         ))}
       </div>
