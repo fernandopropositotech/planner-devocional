@@ -1,6 +1,26 @@
 // src/app/planner/data/sampleData.ts
 
-export const plannerData: { [key: string]: any[] } = {
+// Tipos mais claros para o planner
+export interface Devotional {
+  prayer: string;
+  bible: string;
+  reflection: string;
+}
+
+export interface Application {
+  lesson: string;
+  improvement: string;
+  gratitude: string;
+}
+
+export interface PlannerDay {
+  day: number;
+  devotional: Devotional;
+  application: Application;
+}
+
+// O objeto principal com tipagem segura
+export const plannerData: Record<string, PlannerDay[]> = {
   Janeiro: [
     {
       day: 15,
