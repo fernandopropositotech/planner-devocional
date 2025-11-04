@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.dayCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dayCard h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #5A67D8;
+  margin: 0 0 8px 0;
+}
+
+.dayCard ul li {
+  color: #48BB78;
+  font-size: 14px;
+}
