@@ -13,8 +13,15 @@ export default function PlannerLayout() {
     <section className="min-h-screen bg-slate-100 py-8">
       <MonthSelector selected={month} onSelect={setMonth} />
       <MonthIntro month={month} />
+
       {days.length > 0 ? (
-        days.map((d, i) => <DayCard key={i} {...d} />)
+        days.map((d, i) => (
+          <DayCard
+            key={i}
+            {...d}
+            day={String(d.day)} // 👈 conversão explícita (resolve o erro de tipo)
+          />
+        ))
       ) : (
         <p className="text-center text-slate-500 mt-10">
           Nenhum devocional registrado para este mês ainda.
