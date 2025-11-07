@@ -1,33 +1,26 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import styles from "./DayCard.module.css";
 
 interface DayCardProps {
   day: string;
-  tasks?: string[]; // 👈 adiciona essa prop opcional
+  tasks: string[];
 }
 
-const DayCard: React.FC<DayCardProps> = ({ day, tasks = [] }) => {
-  const [newTask, setNewTask] = useState("");
-
+const DayCard: React.FC<DayCardProps> = ({ day, tasks }) => {
   return (
     <div className={styles.card}>
-      <h2>{day}</h2>
-
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
-        ))}
-      </ul>
-
-      <input
-        type="text"
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        placeholder="Nova tarefa..."
-        className={styles.input}
-      />
+      <h2 className={styles.dayTitle}>{day}</h2>
+      {tasks.length > 0 ? (
+        <ul className={styles.taskList}>
+          {tasks.map((task, index) => (
+            <li key={index} className={styles.taskItem}>
+              {task}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.empty}>Sem tarefas</p>
+      )}
     </div>
   );
 };
