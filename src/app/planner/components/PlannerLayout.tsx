@@ -17,7 +17,7 @@ export default function PlannerLayout() {
       {days.length > 0 ? (
         days.map((d, i) => (
           <DayCard
-            key={i}
+            tasks={[]} key={i}
             {...d}
             day={String(d.day)} // 👈 conversão explícita (resolve o erro de tipo)
           />
